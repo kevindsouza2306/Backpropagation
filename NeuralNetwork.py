@@ -25,7 +25,7 @@ class NeuralNetwork:
         return x * (1 - x)
 
     def fit(self, X, y, epochs=1000, displayUpdate=100):
-        X = np.c_(X, np.ones((X.shape[0])))
+        X = np.c_[X, np.ones((X.shape[0]))]
 
         for epoch in np.arange(0, epochs):
             for (x, target) in zip(X, y):
@@ -65,9 +65,8 @@ class NeuralNetwork:
 
         return p
 
-
-    def calculate_loss(self,X,targets):
+    def calculate_loss(self, X, targets):
         targets = np.atleast_2d(targets)
-        predictions = self.predict(X,addBias=False)
-        loss = 0.5 * np.sum((predictions-targets)**2)
+        predictions = self.predict(X, addBias=False)
+        loss = 0.5 * np.sum((predictions - targets) ** 2)
         return loss
