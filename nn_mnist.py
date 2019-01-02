@@ -27,4 +27,4 @@ print("[INFO] evaluating network")
 predictions = nn.predict(testX)
 predictions = predictions.argmax(axis=1)
 print(classification_report(testY.argmax(axis=1), predictions))
-print("This is the Weight = {}".format(nn.W))
+
